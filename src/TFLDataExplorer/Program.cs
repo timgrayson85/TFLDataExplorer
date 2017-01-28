@@ -11,6 +11,8 @@ namespace TFLDataExplorer
     {
         public static void Main(string[] args)
         {
+
+            //Initial settings
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())

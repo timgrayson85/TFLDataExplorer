@@ -70,7 +70,10 @@
         </div>
         <div class="col-sm-9">
             <div class="well">
-                <p>@item.lineStatuses.FirstOrDefault().statusSeverityDescription</p>
+                @foreach (var status in @item.lineStatuses)
+                {
+                    <p>@status.statusSeverityDescription</p>
+                }
             </div>
         </div>
     </div>

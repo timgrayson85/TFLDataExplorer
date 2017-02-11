@@ -1,0 +1,24 @@
+﻿@using TFLDataExplorer.Models;
+@model List<Line>
+
+@{
+    ViewData["Title"] = "Live Tube Status";
+}
+
+@foreach (var item in @Model)
+{
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="well">
+                <p>@item.name</p>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="well">
+                <p>@item.lineStatuses.FirstOrDefault().statusSeverityDescription</p>
+            </div>
+        </div>
+    </div>
+}
+
+

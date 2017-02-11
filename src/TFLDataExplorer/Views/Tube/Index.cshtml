@@ -3,13 +3,68 @@
 
 @{
     ViewData["Title"] = "Live Tube Status";
+
+    var style = "well";
 }
+
+
 
 @foreach (var item in @Model)
 {
+
+    @if (item.name == "Central")
+    {
+        style = "central-label";
+    }
+    else if (item.name == "Bakerloo")
+    {
+        style = "bakerloo-label";
+    }
+    else if (item.name == "Circle")
+    {
+        style = "circle-label";
+    }
+    else if (item.name == "District")
+    {
+        style = "district-label";
+    }
+    else if (item.name == "Hammersmith & City")
+    {
+        style = "hammersmithandcity-label";
+    }
+    else if (item.name == "Jubilee")
+    {
+        style = "jubilee-label";
+    }
+    else if (item.name == "Metropolitan")
+    {
+        style = "metropolitan-label";
+    }
+    else if (item.name == "Northern")
+    {
+        style = "northern-label";
+    }
+    else if (item.name == "Piccadilly")
+    {
+        style = "piccadilly-label";
+    }
+    else if (item.name == "Victoria")
+    {
+        style = "victoria-label";
+    }
+    else if (item.name == "Waterloo & City")
+    {
+        style = "waterlooandcity-label";
+    }
+    else
+    {
+        style = "well";
+    }
+
+
     <div class="row">
         <div class="col-sm-3">
-            <div class="well">
+            <div class="@style">
                 <p>@item.name</p>
             </div>
         </div>

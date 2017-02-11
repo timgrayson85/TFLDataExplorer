@@ -5,36 +5,37 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using TFLDataExplorer.Models;
+using System.Collections;
 
 namespace TFLDataExplorer.Controllers
 {
     public class TubeController : Controller
     {
 
+        private readonly IList<Line> _lineList;
+        private readonly Mode _mode;
         private readonly MyOptions _optionsAccessor;
+        private readonly IAPIContextAsync _apiContextAsync;
 
-        // Get the secret app_id and app_key to pass in the GET request as the TFL API gives priority to requests with an app_id and app_key.
-        // You can get your own here: https://api-portal.tfl.gov.uk/login. 
-        public TubeController(IOptions<MyOptions> optionsAccessor)
+        public TubeController(IOptions<MyOptions> optionsAccessor, IAPIContextAsync apiContextAsync, Mode mode, IList<Line> lineList)
         {
+            _lineList = lineList;
+            _mode = mode;
             _optionsAccessor = optionsAccessor.Value;
+            _apiContextAsync = apiContextAsync;
         }
+
 
         public async Task<ActionResult> Index()
         {
-            // Declare which mode we want to request line data for.
-            Mode mode = new Mode();
-            mode.Type = "tube";
+            // Declare which Mode we want to request Line data for.
+            _mode.Type = "tube";
 
             // Create an empty list of Lines.
-            IEnumerable<Line> model = new List<Line>();
-
-            // Instantiate a new instance of the APIContextAsync Class which is used to make a call to the TFL API.
-            // To Do: Implement DI 
-            APIContextAsync apiFetcher = new APIContextAsync();
+            IEnumerable<Line> model = _lineList;
 
             // Get the current Line status for the given mode (tube).
-            model = await apiFetcher.GetObject<Line>(string.Format("Line/Mode/{0}/Status?detail=false{1}app_id={2}{1}app_key={3}",mode.Type,"&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
+            model = await _apiContextAsync.GetObject<Line>(string.Format("Line/Mode/{0}/Status?detail=false{1}app_id={2}{1}app_key={3}",_mode.Type,"&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
 
             return View(model);
         }

@@ -12,7 +12,7 @@ using Newtonsoft.Json;
 namespace TFLDataExplorer
 {
 
-    public class APIContextAsync
+    public class APIContextAsync : IAPIContextAsync
     {
         
         public async Task<IEnumerable<T>> GetObject<T>(string uriActionString)

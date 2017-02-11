@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using TFLDataExplorer.Models;
 
 namespace TFLDataExplorer
 {
@@ -40,13 +41,22 @@ namespace TFLDataExplorer
             // Register the IConfiguration instance which MyOptions binds against.
             services.Configure<MyOptions>(Configuration);
 
+            // The TPI API gives priority to requests that specify a unique id and key. You can get your own here: https://api-portal.tfl.gov.uk/login. 
             // Registers the following lambda used to get the API App_Id and App_Key from the Secrets Manager.
-            // These needs to be passed to the API with every request.
             services.Configure<MyOptions>(myOptions =>
             {
                 myOptions.AppId = Configuration["app_id"];
                 myOptions.AppKey = Configuration["app_key"];
             });
+
+            // Register the APIContextAsync class used to make the API calls.
+            services.AddSingleton<IAPIContextAsync, APIContextAsync>();
+
+            // Register other Application services.
+            services.AddScoped(typeof(IList<Line>), typeof(List<Line>));
+            services.AddTransient<Mode>();
+
+
 
             // Add framework services.
             services.AddMvc();

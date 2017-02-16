@@ -52,12 +52,6 @@ namespace TFLDataExplorer
             // Register the APIContextAsync class used to make the API calls.
             services.AddSingleton<IAPIContextAsync, APIContextAsync>();
 
-            // Register other Application services.
-            services.AddScoped(typeof(IList<Line>), typeof(List<Line>));
-            services.AddTransient<Mode>();
-
-
-
             // Add framework services.
             services.AddMvc();
         }

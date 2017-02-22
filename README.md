@@ -1,6 +1,8 @@
 # TFLDataExplorer
 A simple C# MVC Web Application for viewing data from the Transport for London Unified API.
 
+![alt tag](https://github.com/timgrayson85/TFLDataExplorer/blob/master/preview.jpg)
+
 Pre-requisites:
 
 Install Visual Studio 2015:

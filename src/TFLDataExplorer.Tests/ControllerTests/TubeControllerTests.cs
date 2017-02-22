@@ -19,18 +19,19 @@ namespace TFLDataExplorer.Tests
         {
             // Arrange
             // We're not testing the API call at this stage so just mock a list of lines.
-            var mockLineList = new List<Line>();
-            mockLineList.Add(new Line { name = "Central", modeName = "tube" });
+            var mockLineList = new List<LineModel>();
+            mockLineList.Add(new LineModel { name = "Central", modeName = "tube" });
 
             // Create some mock options to avoid Null Reference Exception
             MyOptions options = new MyOptions() { AppId = "Foo", AppKey = "Bar" }; 
                                                                                
             var mockOptions = new Mock<IOptions<MyOptions>>();
-            mockOptions.Setup(x => x.Value).Returns(options);
+            mockOptions.Setup(x => x.Value)
+                .Returns(options);
 
             // Mock the API caller to return the list of lines
             var mockAPIContextAsyc = new Mock<IAPIContextAsync>();
-            mockAPIContextAsyc.Setup(x => x.GetObject<Line>(It.IsAny<string>()))
+            mockAPIContextAsyc.Setup(x => x.GetObjectsAsync<LineModel>(It.IsAny<string>()))
                 .ReturnsAsync(mockLineList);
 
             // Act
@@ -40,7 +41,7 @@ namespace TFLDataExplorer.Tests
 
             // Assert
             Assert.NotNull(result);
-            Assert.IsType<List<Line>>(result.Model);
+            Assert.IsType<List<LineModel>>(result.Model);
 
         }
 

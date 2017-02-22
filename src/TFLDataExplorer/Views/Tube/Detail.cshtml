@@ -1,0 +1,34 @@
+﻿@using TFLDataExplorer.Models;
+@model IEnumerable<LineModel>
+
+
+@{
+    ViewData["Title"] = Model.FirstOrDefault().name + " Detail";
+}
+
+
+<div class="row">
+    <div class="panel panel-default text-left">
+        <div class="panel-body">
+                <p>@Html.LabelFor(x => x.FirstOrDefault().name) @Html.DisplayFor(x => x.FirstOrDefault().name)</p>
+            <div>
+                <p>@Html.LabelFor(x => x.FirstOrDefault().type) @Html.DisplayFor(x => x.FirstOrDefault().type)</p>
+            </div>
+            <div>
+                <p>@Html.LabelFor(x => x.FirstOrDefault().modeName) @Html.DisplayFor(x => x.FirstOrDefault().modeName)</p>
+            </div>
+            <p>
+                @Html.LabelFor(x => x.FirstOrDefault().serviceTypes.FirstOrDefault().name)  
+                      
+                    @foreach (var item in @Model.FirstOrDefault().serviceTypes)
+                    {
+                       <p>@item.name</p>
+                    }
+
+</div>
+        </div>
+    </div>
+
+
+
+

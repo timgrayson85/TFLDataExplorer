@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace TFLDataExplorer.Models
 {
-    public class Mode
+    public class ModeModel
     {
             public string Type { get; set; }
             public bool IsTflService { get; set; }

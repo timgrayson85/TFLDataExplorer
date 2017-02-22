@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TFLDataExplorer.Models
 {
-    public class Crowding 
+    public class CrowdingModel 
     {
         public string type { get; set; }
     }

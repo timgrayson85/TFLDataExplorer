@@ -29,6 +29,7 @@ namespace TFLDataExplorer.Controllers
             return View();
         }
 
+        [Route("/Error")]
         public IActionResult Error()
         {
 

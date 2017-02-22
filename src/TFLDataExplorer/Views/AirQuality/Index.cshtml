@@ -1,0 +1,25 @@
+﻿@using TFLDataExplorer.Models;
+@model AirQualityModel
+
+    @{
+        ViewData["Title"] = "Live DLR Status";
+
+    }
+
+
+    <div class="row">
+        <div class="panel panel-default text-left">
+            <div class="panel-body">
+                <div>
+                    <p>@Html.LabelFor(x => x.updatePeriod) @Html.DisplayFor(x => x.updatePeriod)</p>
+                </div>
+                <div>
+                    <p>@Html.LabelFor(x => x.currentForecast.FirstOrDefault().forecastSummary) @Html.DisplayFor(x => x.currentForecast.FirstOrDefault().forecastSummary)</p>
+                </div>
+                <div>
+                    <p>@Html.LabelFor(x => x.currentForecast.FirstOrDefault().forecastText) @Html.DisplayFor(x => x.currentForecast.FirstOrDefault().forecastText)</p>
+                </div>
+            </div>
+            </div>
+        </div>    
+

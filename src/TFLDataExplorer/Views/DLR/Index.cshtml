@@ -5,6 +5,7 @@
     ViewData["Title"] = "Live DLR Status";
 
     var style = "well";
+    var statusStyle = "";
 }
 
 
@@ -35,10 +36,25 @@
             <div class="well">
                 @foreach (var status in @item.lineStatuses)
                 {
-                    <p>@status.statusSeverityDescription</p>
+                    @if (status.statusSeverityDescription.Contains("Severe"))
+                    {
+                        statusStyle = "severe-delay";
+                    }
+                    else if (status.statusSeverityDescription.Contains("Minor"))
+                    {
+                        statusStyle = "minor-delay";
+                    }
+                    else
+                    {
+                        statusStyle = "";
+                    }
+
+                    <p class="@statusStyle">@status.statusSeverityDescription</p>
+
                 }
             </div>
         </div>
+
     </div>
 }
 

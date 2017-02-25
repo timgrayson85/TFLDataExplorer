@@ -77,7 +77,6 @@
             </a>
         </div>
             <div class="col-sm-9">
-                <div class="well">
                     @foreach (var status in @item.lineStatuses)
                     {
                        @if (status.statusSeverityDescription.Contains("Severe"))
@@ -93,10 +92,10 @@
                            statusStyle = "";
                        }
 
-                        <p class="@statusStyle">@status.statusSeverityDescription</p>
+                        <div class="well">@status.statusSeverityDescription</div>
 
                     }
-                </div>
+                        
             </div>
 </div>
 }

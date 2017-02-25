@@ -8,6 +8,9 @@ namespace TFLDataExplorer.Models
 {
     public class CurrentForecastModel
     {
+
+       breaking build on purpos
+
             public string id { get; set; }
             public string type { get; set; }
             public string forecastType { get; set; }

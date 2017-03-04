@@ -1,13 +1,13 @@
 ﻿@using TFLDataExplorer.Models;
 @using Newtonsoft.Json;
 
+
 @model List<LineModel>
 
 @{
     ViewData["Title"] = "Live Tube Status";
 
     var style = "well";
-    var statusStyle = "";
 }
 
 
@@ -71,33 +71,23 @@
     <div class="row">
         <div class="col-sm-3">
             <a href="@Url.Action("Detail", "Tube", new { name = @item.name } )">
-                <div class="@style">
-                    <p>@item.name</p>
-                </div>
+                <div class="@style">@item.name</div>
             </a>
         </div>
             <div class="col-sm-9">
-                    @foreach (var status in @item.lineStatuses)
-                    {
-                       @if (status.statusSeverityDescription.Contains("Severe"))
-                       {
-                           statusStyle = "severe-delay";
-                       }
-                       else if (status.statusSeverityDescription.Contains("Minor"))
-                       {
-                           statusStyle = "minor-delay";
-                       }
-                       else
-                       {
-                           statusStyle = "";
-                       }
-
-                        <div class="well">@status.statusSeverityDescription</div>
-
-                    }
-                        
+                  @foreach (var status in @item.lineStatuses)
+                  {
+                    <div class="well">@status.statusSeverityDescription</div>
+                  } 
             </div>
-</div>
+        </div>
 }
 
-
+    @section scripts {
+                    
+        @*<script>
+            $(document).ready(function() {
+                alert("Test");
+            });
+        </script>*@
+   }

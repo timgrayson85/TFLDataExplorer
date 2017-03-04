@@ -15,6 +15,11 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -42,6 +47,7 @@
     <p></p>
         <div class="container body-content">
             @RenderBody() 
+            @RenderSection("scripts", required: false)
             <hr />
             <footer>
                 <p>&copy; 2017 - TFLDataExplorer</p>

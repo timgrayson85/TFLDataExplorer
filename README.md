@@ -3,8 +3,6 @@ A simple C# MVC Web Application for viewing data from the Transport for London U
 
 ![Alt text](/src/TFLDataExplorer/wwwroot/images/preview.jpg?raw=true "Tube Status")
 
-![alt tag](https://github.com/timgrayson85/TFLDataExplorer/blob/master/preview2.jpg)
-
 Pre-requisites:
 
 Install Visual Studio 2015:

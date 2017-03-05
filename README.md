@@ -1,7 +1,7 @@
 # TFLDataExplorer
 A simple C# MVC Web Application for viewing data from the Transport for London Unified API. 
 
-![Tube Status Preview](https://github.com/timgrayson85/TFLDataExplorer/blob/master/preview.jpg)
+![Tube Status Preview](https://github.com/timgrayson85/TFLDataExplorer/src/TFLDataExplorer/wwwroot/images/preview.jpg)
 
 ![alt tag](https://github.com/timgrayson85/TFLDataExplorer/blob/master/preview2.jpg)
 

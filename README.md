@@ -17,6 +17,10 @@ Install Secret Manager:
 
 https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets
 
+Register for a free unique app_id from TFL:
+
+https://api-portal.tfl.gov.uk/
+
 Add your app_id and app_key to Secret Manager:
 
 dotnet user-secrets set app_id [xxxxxx]

@@ -77,17 +77,43 @@
             <div class="col-sm-9">
                   @foreach (var status in @item.lineStatuses)
                   {
-                    <div class="well">@status.statusSeverityDescription</div>
+                    <div class="line-status-div">@status.statusSeverityDescription</div>
+
                   } 
             </div>
         </div>
+
 }
 
-    @section scripts {
-                    
-        @*<script>
-            $(document).ready(function() {
-                alert("Test");
+@section scripts {
+    <script>
+            $(document).ready(function () {
+                $(".line-status-div").each(function (i) {
+
+                    // Keep each status as seperate block so that colours and styles can be changed independently.
+                    if ($(this).text() == "Closed") {
+                        this.style.color = "red";
+                    }
+                    else if ($(this).text() == "Severe Delays") {
+                        this.style.color = "red";
+                    }
+                    else if ($(this).text() == "Not Running") {
+                        this.style.color = "red";
+                    }
+                    else if ($(this).text() == "Service Closed") {
+                        this.style.color = "red";
+                    }
+                    else if ($(this).text() == "Part Closure") {
+                        this.style.color = "orange";
+                    }
+                    else if ($(this).text() == "Part Suspended") {
+                        this.style.color = "orange";
+                    }
+                    else {
+                        this.style.color = "black";
+                    }
+                });
             });
-        </script>*@
-   }
+    </script>
+}
+

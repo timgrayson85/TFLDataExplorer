@@ -1,9 +1,7 @@
 # TFLDataExplorer
-A simple C# MVC Web Application for viewing data from the Transport for London Unified API.
+A simple C# MVC Web Application for viewing data from the Transport for London Unified API. 
 
-![alt tag](https://github.com/timgrayson85/TFLDataExplorer/blob/master/preview.jpg)
-
-![alt tag](https://github.com/timgrayson85/TFLDataExplorer/blob/master/preview2.jpg)
+![Alt text](/src/TFLDataExplorer/wwwroot/images/preview.jpg?raw=true "Tube Status")
 
 Pre-requisites:
 
@@ -18,6 +16,10 @@ http://go.microsoft.com/fwlink/?LinkID=798306
 Install Secret Manager:
 
 https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets
+
+Register for a free unique app_id from TFL:
+
+https://api-portal.tfl.gov.uk/
 
 Add your app_id and app_key to Secret Manager:
 

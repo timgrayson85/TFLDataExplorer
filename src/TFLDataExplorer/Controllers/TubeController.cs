@@ -43,6 +43,15 @@ namespace TFLDataExplorer.Controllers
         }
 
 
+        public async Task<ActionResult> Status(string name)
+        {
+            // Get the current Line status for the given line.
+            var model = await _apiContextAsync.GetObjectsAsync<LineModel>(string.Format("Line/{0}/Status?app_id={2}{1}app_key={3}", name, "&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
+
+            return View(model);
+        }
+
+
         public IActionResult Error()
         {
 

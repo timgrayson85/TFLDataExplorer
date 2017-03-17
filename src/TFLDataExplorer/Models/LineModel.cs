@@ -27,7 +27,7 @@ namespace TFLDataExplorer.Models
         public object[] disruptions { get; set; }
         public DateTime created { get; set; }
         public DateTime modified { get; set; }
-        public Linestatus[] lineStatuses { get; set; }
+        public LinestatusModel[] lineStatuses { get; set; }
         public object[] routeSections { get; set; }
         public ServiceTypeModel[] serviceTypes { get; set; }
         public CrowdingModel crowding { get; set; }

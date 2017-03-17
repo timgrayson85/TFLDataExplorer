@@ -10,8 +10,12 @@ namespace TFLDataExplorer.Models
     {
 
             public string id { get; set; }
+
             public string type { get; set; }
+
+            [Display(Name = "Forecast Type: ")]
             public string forecastType { get; set; }
+
             public string forecastID { get; set; }
             public string forecastBand { get; set; }
 
@@ -23,7 +27,15 @@ namespace TFLDataExplorer.Models
             public string pM25Band { get; set; }
             public string sO2Band { get; set; }
 
+           
+            private string forecastText { get; set; }
+
             [Display(Name = "Forecast: ")]
-            public string forecastText { get; set; }
+            public string ForecastText
+            {
+                   get { return System.Net.WebUtility.HtmlDecode(forecastText);}
+                   set { forecastText = value;}
+            }
+             
     }
 }

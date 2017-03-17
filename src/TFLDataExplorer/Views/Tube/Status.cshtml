@@ -1,0 +1,37 @@
+﻿@using TFLDataExplorer.Models;
+@model IEnumerable<LineModel>
+
+
+@{
+    ViewData["Title"] = Model.FirstOrDefault().name + " Status";
+}
+
+
+<div class="row">
+    <div class="panel panel-default text-left">
+        <div class="panel-body">
+    <p>@Html.LabelFor(x => x.FirstOrDefault().name) @Html.DisplayFor(x => x.FirstOrDefault().name)</p>
+    <div>
+        <p>@Html.LabelFor(x => x.FirstOrDefault().lineStatuses.FirstOrDefault().statusSeverityDescription) @Html.DisplayFor(x => x.FirstOrDefault().lineStatuses.FirstOrDefault().statusSeverityDescription)</p>
+    </div>
+    <div>
+        <p>@Html.LabelFor(x => x.FirstOrDefault().lineStatuses.FirstOrDefault().reason) @Html.DisplayFor(x => x.FirstOrDefault().lineStatuses.FirstOrDefault().reason)</p>
+    </div>
+    <p>
+        @Html.LabelFor(x => x.FirstOrDefault().lineStatuses.FirstOrDefault().validityPeriods)
+
+        @foreach (var item in @Model.FirstOrDefault().lineStatuses.FirstOrDefault().validityPeriods)
+        {
+        <p>@Html.LabelFor(x => @item.type) @Html.DisplayFor(x => @item.type)</p>
+        <p>@Html.LabelFor(x => @item.fromDate) @Html.DisplayFor(x => @item.fromDate)</p>
+        <p>@Html.LabelFor(x => @item.toDate) @Html.DisplayFor(x => @item.toDate)</p>
+        <p>@Html.LabelFor(x => @item.isNow) @Html.DisplayFor(x => @item.isNow)</p>
+        }
+
+    </div>
+        </div>
+    </div>
+
+
+
+

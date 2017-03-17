@@ -23,9 +23,9 @@ namespace TFLDataExplorer.Controllers
 
         public async Task<ActionResult> Index()
         {
-
             // Get the current Air Quality status
             var model = await _apiContextAsync.GetObjectAsync<AirQualityModel>(string.Format("AirQuality/?app_id={1}{0}app_key={2}", "&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
+           
 
             return View(model);
         }

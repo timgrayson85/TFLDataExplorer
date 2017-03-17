@@ -7,19 +7,26 @@
     }
 
 
+@foreach (var forecast in Model.currentForecast)
+{
     <div class="row">
         <div class="panel panel-default text-left">
             <div class="panel-body">
                 <div>
-                    <p>@Html.LabelFor(x => x.updatePeriod) @Html.DisplayFor(x => x.updatePeriod)</p>
+                    <p>@Html.LabelFor(x => forecast.forecastType) @Html.DisplayFor(x => forecast.forecastType)</p>
                 </div>
                 <div>
-                    <p>@Html.LabelFor(x => x.currentForecast.FirstOrDefault().forecastSummary) @Html.DisplayFor(x => x.currentForecast.FirstOrDefault().forecastSummary)</p>
+                    <p>@Html.LabelFor(x => forecast.forecastSummary) @Html.DisplayFor(x => forecast.forecastSummary)</p>
                 </div>
                 <div>
+                    <p>@Html.LabelFor(x => forecast.ForecastText) @Html.Raw(forecast.ForecastText))</p>
+                </div>
+                @*<div>
                     <p>@Html.LabelFor(x => x.currentForecast.FirstOrDefault().forecastText) @Html.DisplayFor(x => x.currentForecast.FirstOrDefault().forecastText)</p>
-                </div>
+                </div>*@
             </div>
             </div>
-        </div>    
+        </div>
+}
+
 

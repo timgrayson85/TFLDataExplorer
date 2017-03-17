@@ -74,9 +74,10 @@
             <div class="col-sm-9">
                   @foreach (var status in @item.lineStatuses)
                   {
-                    <div class="line-status-div">@status.statusSeverityDescription</div>
-
-                  } 
+                    <a href="@Url.Action("Status", "Tube", new { name = @item.id } )">
+                        <div class="line-status-div">@status.statusSeverityDescription</div>
+                    </a>
+                 }
             </div>
         </div>
 

@@ -1,0 +1,17 @@
+﻿@using TFLDataExplorer.Models;
+
+@model StationsModel
+
+    @{
+        ViewData["Title"] = "Station Details";
+
+    }
+
+
+@foreach (var item in @Model.Stations.Station)
+{
+
+    <div class="well">@item.Name</div>
+}
+
+

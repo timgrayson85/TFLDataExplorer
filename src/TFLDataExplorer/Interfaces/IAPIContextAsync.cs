@@ -7,6 +7,5 @@ namespace TFLDataExplorer
     {
         Task<IEnumerable<T>> GetObjectsAsync<T>(string uriActionString);
         Task<T> GetObjectAsync<T>(string uriActionString); 
-
     }
 }

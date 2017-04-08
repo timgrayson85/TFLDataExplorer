@@ -52,6 +52,9 @@ namespace TFLDataExplorer
             // Register the APIContextAsync class used to make the API calls.
             services.AddSingleton<IAPIContextAsync, APIContextAsync>();
 
+            // Register the StationService class used to retrieve details of Station facilities.
+            services.AddSingleton<IStationService, StationService>();
+
             // Add framework services.
             services.AddMvc();
         }

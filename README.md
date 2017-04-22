@@ -48,4 +48,4 @@ Install Json.Net from the Packager Manager Console:
 PM> Install-Package Newtonsoft.Json 
 ```
 
-There are a lot of improvements and fixes (just see the [Kanban Board](https://github.com/timgrayson85/TFLDataExplorer/projects/1)) so please feel free to contribute!.
+There are a lot of improvements and fixes required (just see the [Kanban Board](https://github.com/timgrayson85/TFLDataExplorer/projects/1)) so please feel free to contribute!.

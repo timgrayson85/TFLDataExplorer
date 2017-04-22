@@ -1,0 +1,29 @@
+﻿@using TFLDataExplorer.Models;
+
+@model IEnumerable<Station>
+
+@{
+    ViewData["Title"] = "Station Details";
+
+}
+
+
+<div class="panel-body">
+    <p>@Html.LabelFor(x => x.FirstOrDefault().Name) @Html.DisplayFor(x => x.FirstOrDefault().Name)</p>
+    <p>@Html.LabelFor(x => x.FirstOrDefault().Id) @Html.DisplayFor(x => x.FirstOrDefault().Id)</p>
+    <p>@Html.LabelFor(x => x.FirstOrDefault().ContactDetails.Address) @Html.DisplayFor(x => x.FirstOrDefault().ContactDetails.Address)</p>
+    <p>@Html.LabelFor(x => x.FirstOrDefault().ServingLines.ServingLine)
+
+    @foreach (var line in Model.FirstOrDefault().ServingLines.ServingLine)
+    {
+        <p>@Html.DisplayFor(x => line)</p>
+    }
+
+    <p>@Html.LabelFor(x => x.FirstOrDefault().Facilities.Facility)
+
+    @foreach (var facility in Model.FirstOrDefault().Facilities.Facility)
+    {
+    <p>@Html.DisplayFor(x => facility.Name): @Html.DisplayFor(x => facility.Text)</p>
+    }
+
+</div>

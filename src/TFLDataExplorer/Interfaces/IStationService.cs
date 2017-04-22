@@ -5,6 +5,6 @@ namespace TFLDataExplorer
 {
     public interface IStationService
     {
-        Task<StationsModel> GetStationsAsync();
+        Task<StationsModel> GetStationsAsync(string uri);
     }
 }

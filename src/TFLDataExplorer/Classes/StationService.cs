@@ -9,12 +9,12 @@ namespace TFLDataExplorer
     public class StationService : IStationService
     {
 
-        public async Task<StationsModel> GetStationsAsync()
+        public async Task<StationsModel> GetStationsAsync(string uri)
         {
             HttpClient client = new HttpClient();
 
             // Get the list of Stations and their facilities from the TFL Feed.
-            var response = await client.GetStringAsync("https://data.tfl.gov.uk/tfl/syndication/feeds/stations-facilities.xml?app_id=&app_key=");
+            var response = await client.GetStringAsync(uri);
 
             XmlSerializer serial = new XmlSerializer(typeof(StationsModel), new XmlRootAttribute("Root"));
 

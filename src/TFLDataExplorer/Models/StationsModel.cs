@@ -1,11 +1,14 @@
-﻿/* 
+﻿
+using System;
+using System.Xml.Serialization;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+
+/* 
  Licensed under the Apache License, Version 2.0
 
  http://www.apache.org/licenses/LICENSE-2.0
  */
-using System;
-using System.Xml.Serialization;
-using System.Collections.Generic;
 
 
 namespace TFLDataExplorer.Models
@@ -86,6 +89,7 @@ namespace TFLDataExplorer.Models
     public class ContactDetails
     {
         [XmlElement(ElementName = "address")]
+        [Display(Name = "Address: ")]
         public string Address { get; set; }
         [XmlElement(ElementName = "phone")]
         public string Phone { get; set; }
@@ -95,6 +99,7 @@ namespace TFLDataExplorer.Models
     public class ServingLines
     {
         [XmlElement(ElementName = "servingLine")]
+        [Display(Name = "Serving Lines: ")]
         public List<string> ServingLine { get; set; }
     }
 
@@ -118,6 +123,7 @@ namespace TFLDataExplorer.Models
     public class Facilities
     {
         [XmlElement(ElementName = "facility")]
+        [Display(Name = "Facilities: ")]
         public List<Facility> Facility { get; set; }
     }
 
@@ -230,6 +236,7 @@ namespace TFLDataExplorer.Models
     public class Station
     {
         [XmlElement(ElementName = "name")]
+        [Display(Name = "Name: ")]
         public string Name { get; set; }
         [XmlElement(ElementName = "contactDetails")]
         public ContactDetails ContactDetails { get; set; }
@@ -246,6 +253,7 @@ namespace TFLDataExplorer.Models
         [XmlElement(ElementName = "Placemark")]
         public Placemark Placemark { get; set; }
         [XmlAttribute(AttributeName = "id")]
+        [Display(Name = "ID: ")]
         public string Id { get; set; }
         [XmlAttribute(AttributeName = "type")]
         public string Type { get; set; }

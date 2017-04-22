@@ -7,11 +7,81 @@
 
     }
 
-
-@foreach (var item in @Model.Stations.Station)
+<h4>
+    Station Facilities
+</h4>
+@using (Html.BeginForm())
 {
+    // Get a list of Zones for the first drop down list.
+    var zoneList = Model.Stations.Station.Select(x => x.Zones.Zone).ToList().Distinct();
 
-    <div class="well">@item.Name</div>
+    // Create a drop down list of Zones that calls GetStationsByZone ActionMethod in the Station Controller.
+    <div>Select a Zone:</div>
+    @Html.DropDownListFor(m => m.Stations.Station.FirstOrDefault().Zones.Zone, new SelectList(zoneList, "Zone").OrderBy(x => x.Text), new { @id = "ddlzone", @style = "width:200px;", @onchange = "javascript:GetStation(this.value);" })    <br />
+
+    <br />
+    <div>Select a Station:</div>
+    <p><select id="ddlstation" name="ddlstation" style="width: 200px" onchange="javascript:DisplayStation(this.value)"></select></p>
+    <br />
+    
+    <div id="partialview" class="panel panel-default text-left">
+        <p>@Html.Partial("~/Views/Station/_Station.cshtml", Model.Stations.Station)</p>
+    </div>
+
+
 }
 
 
+
+
+
+@section scripts {
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <script language="javascript" type="text/javascript">
+        function GetStation(_zoneid) {
+            var procemessage = "<option value='0'> Please wait...</option>";
+            $("#ddlstation").html(procemessage).show();
+            var url = "/Station/GetStationsByZone/";
+
+            $.ajax({
+                url: url,
+                data: { zoneid: _zoneid },
+                cache: false,
+                type: "POST",
+                success: function (data) {
+                    var markup = "<option value='0'>Select Station</option>";
+                    for (var x = 0; x < data.length; x++) {
+                        markup += "<option value='" + data[x].value + "'>" + data[x].text + "</option>";
+                    }
+                    $("#ddlstation").html(markup).show();
+                },
+                error: function (reponse) {
+                    alert("error : ", reponse);
+                }
+
+
+            });
+        }
+
+  
+        function DisplayStation(_stationid) {
+            var url = "/Station/GetStationById/";
+
+            $.ajax({
+                url: url,
+                data: { stationid: _stationid },
+                cache: false,
+                type: "POST",
+                success: function (data) {
+                    $("#partialview").html(data);
+                },
+                error: function (reponse) {
+                    alert("error : ", reponse);
+                }
+
+
+            });
+        }
+
+
+    </script>}

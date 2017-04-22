@@ -1,7 +1,7 @@
 # TFLDataExplorer
 A simple C# MVC Web Application for viewing data from the Transport for London Unified API. 
 
-![Alt text](/src/TFLDataExplorer/wwwroot/images/preview.jpg?raw=true "Tube Status")
+![Alt text](/src/TFLDataExplorer/wwwroot/images/preview.png?raw=true "Tube Status")
 
 Pre-requisites:
 

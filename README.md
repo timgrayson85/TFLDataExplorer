@@ -7,13 +7,13 @@ A simple C# MVC Web Application for viewing data from the Transport for London U
 Main Features
 =============
 
-* Simple asynchronous Transport for London API bindings
-* Live Tube status and detailed description of delays
-* DLR line status
-* Current and future air quality forecasts
-* Station facility details
-* TeamCity build integration
-* Test coverage
+* Simple asynchronous Transport for London API bindings.
+* Live Tube status and detailed description of delays.
+* DLR line status.
+* Current and future air quality forecasts.
+* Station facility details.
+* TeamCity build integration.
+* Test coverage.
 
 
 Pre-requisites:
@@ -48,4 +48,4 @@ Install Json.Net from the Packager Manager Console:
 PM> Install-Package Newtonsoft.Json 
 ```
 
-There are a lot of improvements and fixes required (just see the [Kanban Board](https://github.com/timgrayson85/TFLDataExplorer/projects/1)) so please feel free to contribute!.
+There are a lot of improvements and fixes required (just see the [Kanban Board](https://github.com/timgrayson85/TFLDataExplorer/projects/1)) so please feel free to contribute!

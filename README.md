@@ -3,6 +3,19 @@ A simple C# MVC Web Application for viewing data from the Transport for London U
 
 ![Alt text](/src/TFLDataExplorer/wwwroot/images/preview.png?raw=true "Tube Status")
 
+
+Main Features
+=============
+
+* Simple asynchronous Transport for London API bindings
+* Live Tube status and detailed description of delays
+* DLR line status
+* Current and future air quality forecasts
+* Station facility details
+* TeamCity build integration
+* Test coverage
+
+
 Pre-requisites:
 
 Install Visual Studio 2015:
@@ -23,10 +36,14 @@ https://api-portal.tfl.gov.uk/
 
 Add your app_id and app_key to Secret Manager:
 
+```
 dotnet user-secrets set app_id [xxxxxx]
-
+```
+```
 dotnet user-secrets set app_key [xxxxxx]
+```
 
 Install Json.Net from the Packager Manager Console:
-
+```
 PM> Install-Package Newtonsoft.Json 
+```

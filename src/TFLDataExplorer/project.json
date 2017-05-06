@@ -64,5 +64,9 @@
     "Microsoft.Extensions.SecretManager.Tools": {
       "version": "1.0.0-preview2-21431"
     }
-  }
+  },
+
+  "userSecretsId": "232342347a4-eb88-4b18-9b77-2a93f3b15119"
+
+
 }

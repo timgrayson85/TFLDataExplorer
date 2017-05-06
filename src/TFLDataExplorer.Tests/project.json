@@ -1,6 +1,4 @@
 ﻿{
-  "version": "1.0.0-*",
-  "testRunner": "xunit",
   "dependencies": {
     "xunit": "2.2.0-beta2-build3300",
     "TFLDataExplorer": "1.0.0-*",
@@ -15,5 +13,10 @@
         }
       }
     }
-  }
+
+
+  },
+  "testRunner": "xunit",
+  "userSecretsId": "232342347a4-eb88-4b18-9b77-2a93f3b15119",
+  "version": "1.0.0-*"
 }

@@ -29,6 +29,7 @@ namespace TFLDataExplorer.Controllers
             // Get the current Line status for the given mode (dlr).
             var model = await _apiContextAsync.GetObjectsAsync<LineModel>(string.Format("Line/Mode/{0}/Status?detail=false{1}app_id={2}{1}app_key={3}", mode, "&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
 
+
             return View(model);
         }
 
@@ -38,6 +39,7 @@ namespace TFLDataExplorer.Controllers
         {
             // Get the current Line status for the given line.
             var model = await _apiContextAsync.GetObjectsAsync<LineModel>(string.Format("Line/{0}?app_id={2}{1}app_key={3}", name, "&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
+
 
             return View(model);
         }

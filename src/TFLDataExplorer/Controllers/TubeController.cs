@@ -30,6 +30,9 @@ namespace TFLDataExplorer.Controllers
             // Get the current Line status for the given mode (tube).
             var model = await _apiContextAsync.GetObjectsAsync<LineModel>(string.Format("Line/Mode/{0}/Status?detail=false{1}app_id={2}{1}app_key={3}", mode, "&", _optionsAccessor.AppId, _optionsAccessor.AppKey));
 
+            model = model.OrderByDescending(x => x.lineStatuses.Sum(s => s.statusSeverity)).ToList();
+
+
             return View(model);
         }
 

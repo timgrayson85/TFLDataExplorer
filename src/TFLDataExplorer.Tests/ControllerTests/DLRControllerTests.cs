@@ -35,7 +35,7 @@ namespace TFLDataExplorer.Tests
                 .ReturnsAsync(mockLineList);
 
             // Act
-            TubeController dlrController = new TubeController(mockOptions.Object, mockAPIContextAsyc.Object);
+            DLRController dlrController = new DLRController(mockOptions.Object, mockAPIContextAsyc.Object);
             var actionResult = await dlrController.Index();
             var result = actionResult as ViewResult;
 

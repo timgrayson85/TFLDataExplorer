@@ -1,18 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.15
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F1A6FD99-82CB-455D-B1E3-1FC1CBE48BD9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36C487D8-53AC-4FB3-9711-53FDD917105F}"
-	ProjectSection(SolutionItems) = preProject
-		global.json = global.json
-	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TFLDataExplorer", "src\TFLDataExplorer\TFLDataExplorer.xproj", "{F91551D2-DF24-4CB1-8A76-C12BA6622A9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFLDataExplorer", "src\TFLDataExplorer\TFLDataExplorer.csproj", "{F91551D2-DF24-4CB1-8A76-C12BA6622A9B}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "TFLDataExplorer.Tests", "src\TFLDataExplorer.Tests\TFLDataExplorer.Tests.xproj", "{6E2D8AEE-B3FA-474F-BDF2-2ED67082119A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TFLDataExplorer.Tests", "src\TFLDataExplorer.Tests\TFLDataExplorer.Tests.csproj", "{6E2D8AEE-B3FA-474F-BDF2-2ED67082119A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

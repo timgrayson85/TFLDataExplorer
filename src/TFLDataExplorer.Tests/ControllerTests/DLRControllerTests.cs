@@ -19,8 +19,10 @@ namespace TFLDataExplorer.Tests
         {
             // Arrange
             // We're not testing the API call at this stage so just mock a list of lines.
-            var mockLineList = new List<LineModel>();
-            mockLineList.Add(new LineModel { name = "DLR", modeName = "dlr" });
+            var mockLineList = new List<LineModel>
+            {
+                new LineModel { name = "DLR", modeName = "dlr" }
+            };
 
             // Create some mock options to avoid Null Reference Exception
             MyOptions options = new MyOptions() { AppId = "Foo", AppKey = "Bar" }; 

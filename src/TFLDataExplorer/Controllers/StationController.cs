@@ -39,9 +39,7 @@ namespace TFLDataExplorer.Controllers
             var model = await _stationService.GetStationsAsync(string.Format("https://data.tfl.gov.uk/tfl/syndication/feeds/stations-facilities.xml?app_id={0}&app_key={1}", _optionsAccessor.AppId, _optionsAccessor.AppKey));
 
             // Get a List of Stations that are in the Zone selected by the user.
-            List<Station> stationListbyZone = new List<Station>();
-
-            stationListbyZone = model.Stations.Station.Where(x => x.Zones.Zone == zoneid).ToList();
+            var stationListbyZone = model.Stations.Station.Where(x => x.Zones.Zone == zoneid).ToList();
 
             SelectList stationSelectList = new SelectList(stationListbyZone, "Id", "Name", 0);
 
